@@ -4,7 +4,7 @@ import os
 def main():
     cwd = os.getcwd()
 
-    with open(os.path.join(cwd, "first", "input.txt"), "r") as file:
+    with open(os.path.join(cwd, "2023", "first_day", "input.txt"), "r") as file:
         total_sum = 0
         lines = file.readlines()
         for line in lines:
