@@ -21,9 +21,7 @@ def main():
                 if len(nums) == 1 or nums[-1] != last_digit:
                     nums.append(last_digit)
                 total_sum += int("".join(nums))
-
-    print(total_sum)
-    # 54159
+    print(f"Sum of calibration values: {total_sum}")
 
 
 if __name__ == "__main__":

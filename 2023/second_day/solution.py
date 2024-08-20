@@ -5,9 +5,7 @@ class Solve:
         self.split_id_and_game(game_line)
 
     def split_id_and_game(self, game_line: str):
-        splitted = game_line.split(":")
-        self.game_id = splitted[0]
-        self.game_scores = splitted[1].split(";")
+        self.game_id, self.game_scores = game_line.split(":")
 
     def check_values_inside_bounderies(self, key: str):
         if self.games_sum[key] > self.max_allowed[key]:
@@ -15,12 +13,12 @@ class Solve:
         return True
 
     def process(self):
-        for score_cube_set in self.game_scores:
-            for k in self.games_sum:
-                self.games_sum[k] = 0
+        for score_cube_set in self.game_scores.split(";"):
+            for color in self.games_sum:
+                self.games_sum[color] = 0
             score_cube_set = score_cube_set.split(",")
-            for score in score_cube_set:
-                cube_score, cube_color = score.split()
+            for current_score in score_cube_set:
+                cube_score, cube_color = current_score.split()
                 self.games_sum[cube_color] += int(cube_score)
                 if not self.check_values_inside_bounderies(cube_color):
                     return -1
