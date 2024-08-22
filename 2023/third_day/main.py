@@ -5,7 +5,6 @@ def main():
     cwd = os.getcwd()
     with open(os.path.join(cwd, "2023", "third_day", "input.txt"), "r") as file:
         result = solve(file.readlines())
-        # 514969
         print("Final result value: ", result)
 
 

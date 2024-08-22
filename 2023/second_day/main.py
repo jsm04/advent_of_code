@@ -16,5 +16,6 @@ def main():
         sum_values += sum(valid_ids)
         print(f"Sum of IDs of valid games: {sum_values}")
 
+
 if __name__ == "__main__":
     main()
